@@ -1,6 +1,6 @@
 # STRecipeMOD
 
-English version see [here](https://github.com/stdio2016/shapeclear-html/blob/master/README_en.md)
+English version see [here](https://github.com/stdio2016/STRecipe/blob/master/README_en.md)
 
 這是我和hokomili做的，*超*簡單的Minecraft MOD，支援Minecraft 1.11.2
 
