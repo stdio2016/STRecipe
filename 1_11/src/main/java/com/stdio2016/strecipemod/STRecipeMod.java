@@ -19,7 +19,7 @@ import java.util.Map;
 public class STRecipeMod
 {
     public static final String MODID = "strecipemod";
-    public static final String VERSION = "2.0";
+    public static final String VERSION = "2.1";
 
     @NetworkCheckHandler
     public boolean check(Map<String, String> something, Side side) {
@@ -63,8 +63,10 @@ public class STRecipeMod
         );
 
         // diamond
+        // UPDATE: need 3 lapis
         GameRegistry.addShapelessRecipe(new ItemStack(Blocks.DIAMOND_ORE, 1),
                 new ItemStack(Items.DYE, 1, 4), // lapis
+                new ItemStack(Items.DYE, 1, 4),
                 new ItemStack(Items.DYE, 1, 4),
                 Blocks.COBBLESTONE
         );
