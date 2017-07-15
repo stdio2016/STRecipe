@@ -1,5 +1,6 @@
 package com.stdio2016.strecipemod;
 
+import net.minecraft.block.Block;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
 import net.minecraft.item.Item;
@@ -19,7 +20,7 @@ import java.util.Map;
 public class STRecipeMod
 {
     public static final String MODID = "strecipemod";
-    public static final String VERSION = "2.1";
+    public static final String VERSION = "2.2";
 
     @NetworkCheckHandler
     public boolean check(Map<String, String> something, Side side) {
@@ -475,6 +476,33 @@ public class STRecipeMod
         GameRegistry.addShapelessRecipe(new ItemStack(blueprint, 1, BLUEPRINT_META),
                 new ItemStack(Blocks.WOOL, 1, 11) // blue
         );
+        // new in 2017/7/15
+        Item diamondGear = Item.getByNameOrId("buildcraftcore:gear_diamond");
+        Item goldGear = Item.getByNameOrId("buildcraftcore:gear_gold");
+        Block landmark = Block.getBlockFromName("buildcraftcore:marker_volume");
+        ItemStack yellow = new ItemStack(Items.DYE, 1, 11);
+        ItemStack black = new ItemStack(Items.DYE, 1, 0);
+
+        Block builder = Block.getBlockFromName("buildcraftbuilders:builder");
+        Block filler = Block.getBlockFromName("buildcraftbuilders:filler");
+
+        Block architectTable = Block.getBlockFromName("buildcraftbuilders:architect");
+        Block blueprintLibrary = Block.getBlockFromName("buildcraftbuilders:library");
+        GameRegistry.addShapedRecipe(new ItemStack(builder),
+                "kLk","yTy","gCg",
+                'k', black, 'L', landmark, 'y', yellow, 'T', Blocks.CRAFTING_TABLE,
+                'g', diamondGear, 'C', Blocks.CHEST);
+        GameRegistry.addShapedRecipe(new ItemStack(filler),
+                "kLk","yTy","gCg",
+                'k', black, 'L', landmark, 'y', yellow, 'T', Blocks.CRAFTING_TABLE,
+                'g', goldGear, 'C', Blocks.CHEST);
+        GameRegistry.addShapedRecipe(new ItemStack(architectTable),
+                "kLk","yTy","gpg",
+                'k', black, 'L', landmark, 'y', yellow, 'T', Blocks.CRAFTING_TABLE,
+                'g', diamondGear, 'p', new ItemStack(blueprint, 1, BLUEPRINT_META));
+        GameRegistry.addShapedRecipe(new ItemStack(blueprintLibrary),
+                "ppp","pSp","ppp",
+                'p', new ItemStack(blueprint, 1, BLUEPRINT_META), 'S', Blocks.BOOKSHELF);
     }
 
     @EventHandler
