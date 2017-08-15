@@ -5,14 +5,19 @@ import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
+import net.minecraftforge.common.brewing.BrewingRecipe;
+import net.minecraftforge.common.brewing.BrewingRecipeRegistry;
+import net.minecraftforge.fml.common.IFuelHandler;
 import net.minecraftforge.fml.common.Loader;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.Mod.EventHandler;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
+import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 import net.minecraftforge.fml.common.network.NetworkCheckHandler;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.oredict.OreDictionary;
+import net.minecraftforge.oredict.ShapelessOreRecipe;
 
 import java.util.Map;
 
@@ -27,6 +32,11 @@ public class STRecipeMod
         // this mod does not depend on any other mod
         // on server multi player, clients don't need to install this mod
         return true;
+    }
+
+    @EventHandler
+    public void preInit(FMLPreInitializationEvent e) {
+        OreDictionary.registerOre("listAllmilk", Items.MILK_BUCKET);
     }
 
     private synchronized void most() {
@@ -271,7 +281,8 @@ public class STRecipeMod
         // wood
         // meta is 0~5
         for (int i=0; i<6; i++) {
-            GameRegistry.addShapedRecipe(new ItemStack(Blocks.PLANKS, 6, i),
+            Block log = i<4?Blocks.LOG:Blocks.LOG2;
+            GameRegistry.addShapedRecipe(new ItemStack(log, 6, i&3),
                     "W", "b", "s",
                     'W', Items.WATER_BUCKET,
                     'b', new ItemStack(Items.DYE, 1, 15), // bone meal
@@ -395,6 +406,31 @@ public class STRecipeMod
                 new ItemStack(Blocks.WOOL, 1, 13), // green
                 new ItemStack(Blocks.WOOL, 1, 15) // black
         );
+
+        BrewingRecipeRegistry.addRecipe(new BrewingRecipe(
+                new ItemStack(Items.POTIONITEM, 1, 0), // water bottle
+                new ItemStack(Blocks.WOOL, 1, 4), // yellow
+                new ItemStack(Items.EXPERIENCE_BOTTLE)
+        ));
+        GameRegistry.addShapelessRecipe(new ItemStack(Items.SPAWN_EGG),
+                new ItemStack(Items.DYE, 1, 15), // bone meal
+                Items.EGG
+        );
+        GameRegistry.addRecipe(new ShapelessOreRecipe(
+                new ItemStack(Blocks.STONE, 1, 3), // diorite
+                new ItemStack(Blocks.COBBLESTONE, 1), // stone
+                "listAllmilk"
+        ));
+        BrewingRecipeRegistry.addRecipe(new BrewingRecipe(
+                new ItemStack(Items.POTIONITEM, 1, 0), // water bottle
+                new ItemStack(Items.SPAWN_EGG, 1),
+                new ItemStack(Items.EXPERIENCE_BOTTLE)
+        ));
+        // NEW IN 2017/8/15
+        GameRegistry.addShapedRecipe(new ItemStack(Items.PAPER),
+                "xxx", 'x', Items.STICK);
+        GameRegistry.addShapedRecipe(new ItemStack(Items.STRING),
+                "x","x","x", 'x', Items.STICK);
     }
 
     private void ic() {
@@ -520,6 +556,7 @@ public class STRecipeMod
             tooNewRecipes();
         }
         woolRecolor();
+        ddd();
     }
 
     private void woolRecolor() {
@@ -531,5 +568,16 @@ public class STRecipeMod
                     'c', new ItemStack(Items.DYE, 1, colorId[i])
             );
         }
+    }
+
+    private void ddd(){
+        GameRegistry.registerFuelHandler(new IFuelHandler() {
+            final Item cookingOil = Item.getByNameOrId("harvestcraft:oliveoilitem");
+            @Override
+            public int getBurnTime(ItemStack itemStack) {
+                if (itemStack.getItem() == cookingOil) return 200*4;
+                return 0;
+            }
+        });
     }
 }
