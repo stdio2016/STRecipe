@@ -539,6 +539,16 @@ public class STRecipeMod
         GameRegistry.addShapedRecipe(new ItemStack(blueprintLibrary),
                 "ppp","pSp","ppp",
                 'p', new ItemStack(blueprint, 1, BLUEPRINT_META), 'S', Blocks.BOOKSHELF);
+
+        // new in 2017/8/28
+        Item emzuliPipe = Item.getByNameOrId("buildcrafttransport:pipe_emzuli_item");
+        GameRegistry.addShapedRecipe(new ItemStack(emzuliPipe, 8),
+                "lge",
+                'l', Blocks.LAPIS_BLOCK, 'g', Blocks.GLASS, 'e', Items.EMERALD);
+        Item stripedPipe = Item.getByNameOrId("buildcrafttransport:pipe_stripes_item");
+        GameRegistry.addShapedRecipe(new ItemStack(stripedPipe, 8),
+                "ege",
+                'e', goldGear, 'g', Blocks.GLASS);
     }
 
     @EventHandler
