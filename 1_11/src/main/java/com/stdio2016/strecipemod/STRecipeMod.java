@@ -67,6 +67,7 @@ public class STRecipeMod
         helpAddShapelessRecipe(new ItemStack(Blocks.IRON_ORE, 1),
                 new ItemStack(Items.DYE, 1, 15), // bone meal
                 new ItemStack(Items.DYE, 1, 15),
+                new ItemStack(Items.DYE, 1, 15),
                 Blocks.COBBLESTONE
         );
         helpAddShapedRecipe(new ItemStack(Blocks.IRON_ORE, 5),
@@ -76,9 +77,10 @@ public class STRecipeMod
         );
 
         // gold
-        // UPDATE: need 3 orange dye instead of 1
+        // UPDATE: need 4 orange dye instead of 3
         helpAddShapelessRecipe(new ItemStack(Blocks.GOLD_ORE, 1),
                 new ItemStack(Items.DYE, 1, 14), // orange
+                new ItemStack(Items.DYE, 1, 14),
                 new ItemStack(Items.DYE, 1, 14),
                 new ItemStack(Items.DYE, 1, 14),
                 Blocks.COBBLESTONE
@@ -90,9 +92,10 @@ public class STRecipeMod
         );
 
         // diamond
-        // UPDATE: need 3 lapis
+        // UPDATE: need 4 lapis
         helpAddShapelessRecipe(new ItemStack(Blocks.DIAMOND_ORE, 1),
                 new ItemStack(Items.DYE, 1, 4), // lapis
+                new ItemStack(Items.DYE, 1, 4),
                 new ItemStack(Items.DYE, 1, 4),
                 new ItemStack(Items.DYE, 1, 4),
                 Blocks.COBBLESTONE
@@ -145,36 +148,54 @@ public class STRecipeMod
         );
 
         // lots of strange recipes with cobblestone
-        helpAddShapedRecipe(new ItemStack(Blocks.OBSIDIAN, 2),
+        helpAddShapedRecipe(new ItemStack(Blocks.OBSIDIAN, 1),
         "ii","Si",
                 'S', Blocks.COBBLESTONE,
                 'i', new ItemStack(Items.DYE, 1, 0) // ink sac
         );
         // rose red -> redstone
         // cactus green -> emerald
-        // cocoa bean no formula
+        // cocoa bean formula new in 2018/1/17
+        helpAddShapelessRecipe(new ItemStack(Blocks.DIRT, 16),
+                new ItemStack(Items.DYE, 1, 3), // cocoa bean
+                Blocks.COBBLESTONE
+        );
         // lapis -> clone lapis
         helpAddShapelessRecipe(new ItemStack(Items.ENDER_PEARL, 1),
                 new ItemStack(Items.DYE, 1, 5), // purple
+                new ItemStack(Items.DYE, 1, 5), // purple
                 Blocks.COBBLESTONE
         );
-        helpAddShapelessRecipe(new ItemStack(Blocks.SNOW, 1),
+        helpAddShapelessRecipe(new ItemStack(Blocks.SNOW, 8),
                 new ItemStack(Items.DYE, 1, 6), // cyan
-                Blocks.COBBLESTONE
+                Blocks.COBBLESTONE, Blocks.COBBLESTONE,
+                Blocks.COBBLESTONE, Blocks.COBBLESTONE,
+                Blocks.COBBLESTONE, Blocks.COBBLESTONE,
+                Blocks.COBBLESTONE, Blocks.COBBLESTONE
         );
-        helpAddShapelessRecipe(new ItemStack(Blocks.CLAY, 1),
+        helpAddShapelessRecipe(new ItemStack(Blocks.CLAY, 2),
                 new ItemStack(Items.DYE, 1, 7), // light gray
-                Blocks.COBBLESTONE
+                Blocks.COBBLESTONE, Blocks.COBBLESTONE
         );
         helpAddShapelessRecipe(new ItemStack(Items.GUNPOWDER, 1),
                 new ItemStack(Items.DYE, 1, 8), // gray
                 Blocks.COBBLESTONE
         );
+        // update in 2018/1/17: expensive
         helpAddShapelessRecipe(new ItemStack(Blocks.CHORUS_FLOWER, 1),
+                new ItemStack(Items.DYE, 1, 9), // pink
+                new ItemStack(Items.DYE, 1, 9), // pink
+                new ItemStack(Items.DYE, 1, 9), // pink
+                new ItemStack(Items.DYE, 1, 9), // pink
+                new ItemStack(Items.DYE, 1, 9), // pink
+                new ItemStack(Items.DYE, 1, 9), // pink
+                new ItemStack(Items.DYE, 1, 9), // pink
                 new ItemStack(Items.DYE, 1, 9), // pink
                 Blocks.COBBLESTONE
         );
         helpAddShapelessRecipe(new ItemStack(Blocks.SLIME_BLOCK, 1),
+                new ItemStack(Items.DYE, 1, 10), // lime
+                new ItemStack(Items.DYE, 1, 10), // lime
                 new ItemStack(Items.DYE, 1, 10), // lime
                 Blocks.COBBLESTONE
         );
@@ -189,6 +210,9 @@ public class STRecipeMod
                 Blocks.COBBLESTONE
         );
         helpAddShapelessRecipe(new ItemStack(Blocks.END_STONE, 1),
+                new ItemStack(Items.DYE, 1, 13), // magenta
+                new ItemStack(Items.DYE, 1, 13), // magenta
+                new ItemStack(Items.DYE, 1, 13), // magenta
                 new ItemStack(Items.DYE, 1, 13), // magenta
                 Blocks.COBBLESTONE
         );
@@ -249,11 +273,9 @@ public class STRecipeMod
         );
 
         // lava
-        helpAddShapelessRecipe(new ItemStack(Blocks.MAGMA, 8),
+        helpAddShapelessRecipe(new ItemStack(Blocks.MAGMA, 4),
                 Blocks.STONE,Blocks.STONE,
-                Blocks.STONE,Blocks.STONE,
-                Blocks.STONE,Blocks.STONE,
-                Blocks.STONE,Blocks.STONE,
+                Blocks.STONE,
                 Items.LAVA_BUCKET
         );
         helpAddShapelessRecipe(new ItemStack(Items.LAVA_BUCKET, 1),
@@ -447,6 +469,23 @@ public class STRecipeMod
                 "xxx", 'x', Items.STICK);
         helpAddShapedRecipe(new ItemStack(Items.STRING),
                 "x","x","x", 'x', Items.STICK);
+        // new in 2018/1/17
+        helpAddShapelessRecipe(new ItemStack(Blocks.COAL_ORE),
+                Blocks.COBBLESTONE,
+                new ItemStack(Items.DYE, 1, 0), // ink sac
+                new ItemStack(Items.DYE, 1, 0)
+        );
+        helpAddShapelessRecipe(new ItemStack(Items.DYE, 3), // cocoa bean
+                Items.WHEAT_SEEDS,
+                new ItemStack(Blocks.DIRT, 1, 2), // podzol
+                new ItemStack(Blocks.DIRT, 1, 2),
+                new ItemStack(Blocks.DIRT, 1, 2),
+                new ItemStack(Blocks.DIRT, 1, 2),
+                new ItemStack(Blocks.DIRT, 1, 2),
+                new ItemStack(Blocks.DIRT, 1, 2),
+                new ItemStack(Blocks.DIRT, 1, 2),
+                new ItemStack(Blocks.DIRT, 1, 2)
+        );
     }
 
     private void ic() {
@@ -454,6 +493,7 @@ public class STRecipeMod
         Item ingot = Item.getByNameOrId("ic2:ingot");
         final int COPPER_ORE_META = 1, COPPER_INGOT_META = 2;
         helpAddShapelessRecipe(new ItemStack(ore, 1, COPPER_ORE_META),
+                new ItemStack(Items.DYE, 1, 14), // orange
                 new ItemStack(Items.DYE, 1, 14), // orange
                 Blocks.COBBLESTONE
         );
@@ -476,6 +516,8 @@ public class STRecipeMod
         helpAddShapelessRecipe(new ItemStack(ore, 1, LEAD_ORE_META),
                 new ItemStack(Items.DYE, 1, 8), // gray
                 new ItemStack(Items.DYE, 1, 8),
+                new ItemStack(Items.DYE, 1, 8),
+                new ItemStack(Items.DYE, 1, 8),
                 Blocks.COBBLESTONE
         );
         helpAddShapedRecipe(new ItemStack(ore, 5, LEAD_ORE_META),
@@ -486,6 +528,11 @@ public class STRecipeMod
         Item nuclear = Item.getByNameOrId("ic2:nuclear");
         final int URANIUM_ORE_META = 4, U235_TINY_PILE_META = 5, U238_META = 2;
         helpAddShapelessRecipe(new ItemStack(ore, 1, URANIUM_ORE_META),
+                new ItemStack(Items.DYE, 1, 10), // lime
+                new ItemStack(Items.DYE, 1, 10), // lime
+                new ItemStack(Items.DYE, 1, 10), // lime
+                new ItemStack(Items.DYE, 1, 10), // lime
+                new ItemStack(Items.DYE, 1, 10), // lime
                 new ItemStack(Items.DYE, 1, 10), // lime
                 new ItemStack(Items.DYE, 1, 10), // lime
                 new ItemStack(Items.DYE, 1, 10), // lime
