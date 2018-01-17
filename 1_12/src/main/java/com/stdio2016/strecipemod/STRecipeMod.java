@@ -15,6 +15,9 @@ import net.minecraftforge.fml.common.Mod.EventHandler;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 import net.minecraftforge.fml.common.registry.ForgeRegistries;
+import net.minecraftforge.fml.common.registry.GameRegistry;
+import net.minecraftforge.oredict.OreIngredient;
+import net.minecraftforge.oredict.ShapelessOreRecipe;
 
 /**
  * This mod adds only recipes
@@ -23,7 +26,7 @@ import net.minecraftforge.fml.common.registry.ForgeRegistries;
 public class STRecipeMod
 {
     public static final String MODID = "strecipemod";
-    public static final String VERSION = "0.1";
+    public static final String VERSION = "3.0";
     // recipe ID counter
     private int r;
 
@@ -38,7 +41,7 @@ public class STRecipeMod
         ForgeRegistries.RECIPES.register(recipeFluid);
     }
 
-    private void helpAddShapelessRecipe(ItemStack resultStack, Object[] inputs) {
+    private void helpAddShapelessRecipe(ItemStack resultStack, Object...inputs) {
         NonNullList<Ingredient> ingredients = NonNullList.create();
         for (Object input : inputs) {
             ingredients.add(CraftingHelper.getIngredient(input));
@@ -103,6 +106,12 @@ public class STRecipeMod
                 diamond, cobble, diamond,
                 cobble, diamond, cobble
         });
+        String name = MODID + ":" + "some"+ ".LaJi" + String.valueOf(r);
+        GameRegistry.addShapelessRecipe(new ResourceLocation(name),null,
+                new ItemStack(Blocks.STONE, 1, 3), // diorite
+                Ingredient.fromStacks(new ItemStack(Blocks.COBBLESTONE, 1)), // stone
+                new OreIngredient("listAllmilk")
+        );
     }
 
     @EventHandler
