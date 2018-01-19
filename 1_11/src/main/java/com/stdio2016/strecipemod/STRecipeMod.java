@@ -1,10 +1,14 @@
 package com.stdio2016.strecipemod;
 
+import com.google.common.collect.Lists;
 import net.minecraft.block.Block;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
+import net.minecraft.item.crafting.IRecipe;
+import net.minecraft.nbt.NBTTagInt;
+import net.minecraft.nbt.NBTTagString;
 import net.minecraftforge.common.brewing.BrewingRecipe;
 import net.minecraftforge.common.brewing.BrewingRecipeRegistry;
 import net.minecraftforge.fml.common.IFuelHandler;
@@ -19,6 +23,7 @@ import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.oredict.OreDictionary;
 import net.minecraftforge.oredict.ShapelessOreRecipe;
 
+import java.util.List;
 import java.util.Map;
 
 @Mod(modid = STRecipeMod.MODID, version = STRecipeMod.VERSION)
@@ -612,6 +617,20 @@ public class STRecipeMod
         helpAddShapedRecipe(new ItemStack(stripedPipe, 8),
                 "ege",
                 'e', goldGear, 'g', Blocks.GLASS);
+        List<ItemStack> inputs = Lists.newArrayList();
+        Item bucket = Item.getByNameOrId("forge:bucketfilled");
+        ItemStack fossil = new ItemStack(bucket);
+        fossil.setTagInfo("FluidName", new NBTTagString("oil"));
+        fossil.setTagInfo("Amount", new NBTTagInt(1000));
+        inputs.add(fossil);
+        for (int i = 0; i < 8; i++) {
+            inputs.add(new ItemStack(Items.WHEAT_SEEDS));
+        }
+        IRecipe re = new NbtSensitiveShapelessRecipe(
+                new ItemStack(Items.DYE,8,3), // cocoa bean
+                inputs
+        );
+        GameRegistry.addRecipe(re);
     }
 
     @EventHandler
