@@ -23,6 +23,7 @@ import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.oredict.OreDictionary;
 import net.minecraftforge.oredict.ShapelessOreRecipe;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
@@ -628,6 +629,13 @@ public class STRecipeMod
         }
         IRecipe re = new NbtSensitiveShapelessRecipe(
                 new ItemStack(Items.DYE,8,3), // cocoa bean
+                inputs
+        );
+        GameRegistry.addRecipe(re);
+
+        inputs = Lists.newArrayList(fossil, new ItemStack(Blocks.COBBLESTONE));
+        re = new NbtSensitiveShapelessRecipe(
+                new ItemStack(Blocks.COBBLESTONE, 64),
                 inputs
         );
         GameRegistry.addRecipe(re);
