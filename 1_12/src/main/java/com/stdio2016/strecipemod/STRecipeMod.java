@@ -3,6 +3,7 @@ package com.stdio2016.strecipemod;
 import net.minecraft.block.Block;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
+import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.crafting.*;
 import net.minecraft.util.NonNullList;
@@ -10,6 +11,7 @@ import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.common.brewing.BrewingRecipe;
 import net.minecraftforge.common.brewing.BrewingRecipeRegistry;
 import net.minecraftforge.common.crafting.CraftingHelper;
+import net.minecraftforge.fml.common.Loader;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.Mod.EventHandler;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
@@ -69,49 +71,64 @@ public class STRecipeMod
 
     @EventHandler
     public void preInit(FMLPreInitializationEvent event) {
+        OreDictionary.registerOre("listAllmilk", Items.MILK_BUCKET);
         most();
+        if (Loader.isModLoaded("ic2")) {
+            System.out.println("IIIIII CCCCCC 222222");
+            ic();
+        }
+        if (Loader.isModLoaded("buildcraftbuilders")) {
+            System.out.println("BBBBB CCCCC");
+            //tooNewRecipes();
+        }
+        //woolRecolor();
+        //ddd();
+        System.out.println("STRecipeMod loaded successfully. Enjoy!");
     }
 
+    private final static ItemStack
+            ink = new ItemStack(Items.DYE, 1, 0),
+            red = new ItemStack(Items.DYE, 1, 1),
+            green = new ItemStack(Items.DYE, 1, 2),
+            cocoa = new ItemStack(Items.DYE, 1, 3),
+            lapis = new ItemStack(Items.DYE, 1, 4),
+            purple = new ItemStack(Items.DYE, 1, 5),
+            cyan = new ItemStack(Items.DYE, 1, 6),
+            lightGray = new ItemStack(Items.DYE, 1, 7),
+            gray = new ItemStack(Items.DYE, 1, 8),
+            pink = new ItemStack(Items.DYE, 1, 9),
+            lime = new ItemStack(Items.DYE, 1, 10),
+            yellow = new ItemStack(Items.DYE, 1, 11),
+            lightBlue = new ItemStack(Items.DYE, 1, 12),
+            magenta = new ItemStack(Items.DYE, 1, 13),
+            orange = new ItemStack(Items.DYE, 1, 14),
+            boneMeal = new ItemStack(Items.DYE, 1, 15);
+
+    private final static ItemStack
+            whiteWool = new ItemStack(Blocks.WOOL, 1, 0),
+            orangeWool = new ItemStack(Blocks.WOOL, 1, 1),
+            magentaWool = new ItemStack(Blocks.WOOL, 1, 2),
+            lightBlueWool = new ItemStack(Blocks.WOOL, 1, 3),
+            yellowWool = new ItemStack(Blocks.WOOL, 1, 4),
+            limeWool = new ItemStack(Blocks.WOOL, 1, 5),
+            pinkWool = new ItemStack(Blocks.WOOL, 1, 6),
+            grayWool = new ItemStack(Blocks.WOOL, 1, 7),
+            lightGrayWool = new ItemStack(Blocks.WOOL, 1, 8),
+            cyanWool =  new ItemStack(Blocks.WOOL, 1, 9),
+            purpleWool = new ItemStack(Blocks.WOOL, 1, 10),
+            brownWool = new ItemStack(Blocks.WOOL, 1, 12),
+            greenWool = new ItemStack(Blocks.WOOL, 1, 13),
+            redWool = new ItemStack(Blocks.WOOL, 1, 14),
+            blackWool = new ItemStack(Blocks.WOOL, 1, 15);
+
+    private final static ItemStack podzol = new ItemStack(Blocks.DIRT, 1, 2);
+
     private synchronized void most() {
-        ItemStack ink = new ItemStack(Items.DYE, 1, 0);
-        ItemStack red = new ItemStack(Items.DYE, 1, 1);
-        ItemStack green = new ItemStack(Items.DYE, 1, 2);
-        ItemStack cocoa = new ItemStack(Items.DYE, 1, 3);
-        ItemStack lapis = new ItemStack(Items.DYE, 1, 4);
-        ItemStack purple = new ItemStack(Items.DYE, 1, 5);
-        ItemStack cyan = new ItemStack(Items.DYE, 1, 6);
-        ItemStack lightGray = new ItemStack(Items.DYE, 1, 7);
-        ItemStack gray = new ItemStack(Items.DYE, 1, 8);
-        ItemStack pink = new ItemStack(Items.DYE, 1, 9);
-        ItemStack lime = new ItemStack(Items.DYE, 1, 10);
-        ItemStack yellow = new ItemStack(Items.DYE, 1, 11);
-        ItemStack lightBlue = new ItemStack(Items.DYE, 1, 12);
-        ItemStack magenta = new ItemStack(Items.DYE, 1, 13);
-        ItemStack orange = new ItemStack(Items.DYE, 1, 14);
-        ItemStack boneMeal = new ItemStack(Items.DYE, 1, 15);
-
-        ItemStack whiteWool = new ItemStack(Blocks.WOOL, 1, 0);
-        ItemStack orangeWool = new ItemStack(Blocks.WOOL, 1, 1);
-        ItemStack magentaWool = new ItemStack(Blocks.WOOL, 1, 2);
-        ItemStack lightBlueWool = new ItemStack(Blocks.WOOL, 1, 3);
-        ItemStack yellowWool = new ItemStack(Blocks.WOOL, 1, 4);
-        ItemStack limeWool = new ItemStack(Blocks.WOOL, 1, 5);
-        ItemStack pinkWool = new ItemStack(Blocks.WOOL, 1, 6);
-        ItemStack grayWool = new ItemStack(Blocks.WOOL, 1, 7);
-        ItemStack lightGrayWool = new ItemStack(Blocks.WOOL, 1, 8);
-        ItemStack cyanWool =  new ItemStack(Blocks.WOOL, 1, 9);
-        ItemStack purpleWool = new ItemStack(Blocks.WOOL, 1, 10);
-        ItemStack brownWool = new ItemStack(Blocks.WOOL, 1, 12);
-        ItemStack greenWool = new ItemStack(Blocks.WOOL, 1, 13);
-        ItemStack redWool = new ItemStack(Blocks.WOOL, 1, 14);
-        ItemStack blackWool = new ItemStack(Blocks.WOOL, 1, 15);
-
-        ItemStack podzol = new ItemStack(Blocks.DIRT, 1, 2);
         // coal
         helpAddShapedRecipe("copycoal",new ItemStack(Blocks.COAL_ORE, 5),
                 "SmS","mSm","SmS",
                 'S', Blocks.COBBLESTONE,
-                'm', Items.COAL
+                'm', new ItemStack(Items.COAL, 1, 0) // coal
         );
 
         // iron
@@ -480,11 +497,80 @@ public class STRecipeMod
         );
     }
 
+    private void ic() {
+        Item ore = Item.getByNameOrId("ic2:resource");
+        Item ingot = Item.getByNameOrId("ic2:ingot");
+        final int COPPER_ORE_META = 1, COPPER_INGOT_META = 2;
+        if (ore == null || ingot == null) {
+            throw new RuntimeException("Unable to get item from id");
+        }
+        helpAddShapelessRecipe("make_copperore", new ItemStack(ore, 1, COPPER_ORE_META),
+                orange, orange,
+                Blocks.COBBLESTONE
+        );
+        helpAddShapedRecipe("copycopper", new ItemStack(ore, 5, COPPER_ORE_META),
+                "SmS", "mSm", "SmS",
+                'S', Blocks.COBBLESTONE,
+                'm', new ItemStack(ingot, 1, COPPER_INGOT_META)
+        );
+        final int TIN_ORE_META = 3, TIN_INGOT_META = 6;
+        helpAddShapelessRecipe("make_tinore", new ItemStack(ore, 1, TIN_ORE_META),
+                boneMeal,
+                Blocks.COBBLESTONE
+        );
+        helpAddShapedRecipe("copytin", new ItemStack(ore, 5, TIN_ORE_META),
+                "SmS", "mSm", "SmS",
+                'S', Blocks.COBBLESTONE,
+                'm', new ItemStack(ingot, 1, TIN_INGOT_META)
+        );
+        final int LEAD_ORE_META = 2, LEAD_INGOT_META = 3;
+        helpAddShapelessRecipe("make_leadore", new ItemStack(ore, 1, LEAD_ORE_META),
+                gray, gray, gray, gray,
+                Blocks.COBBLESTONE
+        );
+        helpAddShapedRecipe("copylead", new ItemStack(ore, 5, LEAD_ORE_META),
+                "SmS", "mSm", "SmS",
+                'S', Blocks.COBBLESTONE,
+                'm', new ItemStack(ingot, 1, LEAD_INGOT_META)
+        );
+        Item nuclear = Item.getByNameOrId("ic2:nuclear");
+        if (nuclear == null) {
+            throw new RuntimeException("Unable to get item from id");
+        }
+        final int URANIUM_ORE_META = 4, U235_TINY_PILE_META = 5, U238_META = 2;
+        helpAddShapelessRecipe("make_uraniumore", new ItemStack(ore, 1, URANIUM_ORE_META),
+                lime, lime, lime, lime,
+                lime, lime, lime, lime,
+                Blocks.COBBLESTONE
+        );
+        helpAddShapedRecipe("copyuranium", new ItemStack(ore, 1, URANIUM_ORE_META),
+                "SmS", "mcm", "SmS",
+                'S', Blocks.COBBLESTONE,
+                'm', new ItemStack(nuclear, 1, U238_META),
+                'c', new ItemStack(nuclear, 1, U235_TINY_PILE_META)
+        );
+        Item misc_resource = Item.getByNameOrId("ic2:misc_resource");
+        if (misc_resource == null) {
+            throw new RuntimeException("Unable to get item from id");
+        }
+        final int IRIDIUM_SHARD_META = 2;
+        helpAddShapelessRecipe("make_iridium_shard", new ItemStack(misc_resource, 1, IRIDIUM_SHARD_META),
+                new ItemStack(Blocks.BONE_BLOCK, 1), new ItemStack(Blocks.BONE_BLOCK, 1),
+                new ItemStack(Blocks.BONE_BLOCK, 1), new ItemStack(Blocks.BONE_BLOCK, 1),
+                new ItemStack(Blocks.BONE_BLOCK, 1), new ItemStack(Blocks.BONE_BLOCK, 1),
+                new ItemStack(Blocks.BONE_BLOCK, 1), new ItemStack(Blocks.BONE_BLOCK, 1),
+                Blocks.COBBLESTONE
+        );
+        // slime + cocoa -> sticky resins
+        final int STICKY_RESIN_META = 4;
+        helpAddShapelessRecipe("sticky_resin", new ItemStack(misc_resource, 1, STICKY_RESIN_META),
+                Items.SLIME_BALL,
+                cocoa
+        );
+    }
+
     @EventHandler
     public void init(FMLInitializationEvent event)
     {
-        // some example code
-        System.out.println("DIRT BLOCK >> "+Blocks.DIRT.getUnlocalizedName());
-
     }
 }
