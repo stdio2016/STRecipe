@@ -42,6 +42,7 @@ public class STRecipeMod
             String s = something.get(MODID);
             if (s.compareTo(VERSION) != 0) {
                 // different version of my mod, may cause problems
+                System.out.println("But version is incorrect");
                 return false;
             }
         }

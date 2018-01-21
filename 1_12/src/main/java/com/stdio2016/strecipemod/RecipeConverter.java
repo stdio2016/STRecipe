@@ -31,7 +31,7 @@ public class RecipeConverter {
             String row = (String) param[i];
             for (int j = 0; j < this.width; j++) {
                 Character ch = row.charAt(j);
-                inputs[i * this.height + j] = CraftingHelper.getIngredient(ing.get(ch));
+                inputs[i * this.width + j] = CraftingHelper.getIngredient(ing.get(ch));
             }
         }
     }
