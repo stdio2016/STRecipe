@@ -639,6 +639,35 @@ public class STRecipeMod
                 inputs
         );
         GameRegistry.addRecipe(re);
+
+        inputs = Lists.newArrayList(fossil,
+                new ItemStack(Blocks.STONE,1, OreDictionary.WILDCARD_VALUE));
+        re = new NbtSensitiveShapelessRecipe(
+                new ItemStack(Blocks.OBSIDIAN),
+                inputs
+        );
+        GameRegistry.addRecipe(re);
+
+        Block[] logs = {Blocks.LOG, Blocks.LOG2};
+        for (int i = 0; i < 2; i++) {
+            inputs = Lists.newArrayList(fossil,
+                    new ItemStack(logs[i], 1, OreDictionary.WILDCARD_VALUE));
+            re = new NbtSensitiveShapelessRecipe(
+                    new ItemStack(Blocks.COAL_BLOCK),
+                    inputs
+            );
+            GameRegistry.addRecipe(re);
+        }
+
+        inputs = Lists.newArrayList(fossil,
+                new ItemStack(Blocks.WOOL, 1, 12), // brown
+                new ItemStack(Blocks.WEB)
+        );
+        re = new NbtSensitiveShapelessRecipe(
+                new ItemStack(Items.LEATHER, 8),
+                inputs
+        );
+        GameRegistry.addRecipe(re);
     }
 
     @EventHandler
