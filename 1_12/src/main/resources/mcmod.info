@@ -2,10 +2,10 @@
 {
   "modid": "strecipemod",
   "name": "Strange Recipe mod",
-  "description": "Adds some strange recipes that may destroy game balance",
+  "description": "Adds some strange recipes that will break game balance",
   "version": "${version}",
   "mcversion": "${mcversion}",
-  "url": "",
+  "url": "https://github.com/stdio2016/STRecipe",
   "updateUrl": "",
   "authorList": ["stdio2016(Yi-Feng Chen)", "hokomili"],
   "credits": "",
