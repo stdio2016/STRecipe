@@ -492,6 +492,10 @@ public class STRecipeMod
                 new ItemStack(Blocks.DIRT, 1, 2),
                 new ItemStack(Blocks.DIRT, 1, 2)
         );
+        helpAddShapelessRecipe(new ItemStack(Items.APPLE),
+                new ItemStack(Items.DYE, 1, 1), // red
+                Items.CHORUS_FRUIT
+        );
     }
 
     private void ic() {
