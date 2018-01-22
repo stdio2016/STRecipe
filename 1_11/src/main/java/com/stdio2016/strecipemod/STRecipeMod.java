@@ -67,7 +67,7 @@ public class STRecipeMod
         helpAddShapedRecipe(new ItemStack(Blocks.COAL_ORE, 5),
                 "SmS","mSm","SmS",
                 'S', Blocks.COBBLESTONE,
-                'm', Items.COAL
+                'm', new ItemStack(Items.COAL, 1, 0) //coal
         );
 
         // iron
