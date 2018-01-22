@@ -6,6 +6,8 @@ import net.minecraft.init.Items;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.crafting.*;
+import net.minecraft.nbt.NBTTagInt;
+import net.minecraft.nbt.NBTTagString;
 import net.minecraft.util.NonNullList;
 import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.common.brewing.BrewingRecipe;
@@ -21,6 +23,7 @@ import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.minecraftforge.oredict.OreDictionary;
 
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 /**
@@ -567,6 +570,52 @@ public class STRecipeMod
                 Items.SLIME_BALL,
                 cocoa
         );
+    }
+
+    synchronized private void tooNewRecipes() {
+        // new in 2017/7/3
+        Item blueprint = Item.getByNameOrId("buildcraftbuilders:snapshot");
+        final int BLUEPRINT_META = 2;
+        helpAddShapelessRecipe("blueprint", new ItemStack(blueprint, 1, BLUEPRINT_META),
+                new ItemStack(Blocks.WOOL, 1, 11) // blue
+        );
+        // new in 2017/7/15
+        Item diamondGear = Item.getByNameOrId("buildcraftcore:gear_diamond");
+        Item goldGear = Item.getByNameOrId("buildcraftcore:gear_gold");
+        Block landmark = Block.getBlockFromName("buildcraftcore:marker_volume");
+        ItemStack yellow = new ItemStack(Items.DYE, 1, 11);
+        ItemStack black = new ItemStack(Items.DYE, 1, 0);
+
+        Block builder = Block.getBlockFromName("buildcraftbuilders:builder");
+        Block filler = Block.getBlockFromName("buildcraftbuilders:filler");
+
+        Block architectTable = Block.getBlockFromName("buildcraftbuilders:architect");
+        Block blueprintLibrary = Block.getBlockFromName("buildcraftbuilders:library");
+        helpAddShapedRecipe("builder", new ItemStack(builder),
+                "kLk","yTy","gCg",
+                'k', black, 'L', landmark, 'y', yellow, 'T', Blocks.CRAFTING_TABLE,
+                'g', diamondGear, 'C', Blocks.CHEST);
+        helpAddShapedRecipe("filler", new ItemStack(filler),
+                "kLk","yTy","gCg",
+                'k', black, 'L', landmark, 'y', yellow, 'T', Blocks.CRAFTING_TABLE,
+                'g', goldGear, 'C', Blocks.CHEST);
+        helpAddShapedRecipe("architect", new ItemStack(architectTable),
+                "kLk","yTy","gpg",
+                'k', black, 'L', landmark, 'y', yellow, 'T', Blocks.CRAFTING_TABLE,
+                'g', diamondGear, 'p', new ItemStack(blueprint, 1, BLUEPRINT_META));
+        helpAddShapedRecipe("library", new ItemStack(blueprintLibrary),
+                "ppp","pSp","ppp",
+                'p', new ItemStack(blueprint, 1, BLUEPRINT_META), 'S', Blocks.BOOKSHELF);
+
+        // new in 2017/8/28
+        Item emzuliPipe = Item.getByNameOrId("buildcrafttransport:pipe_emzuli_item");
+        helpAddShapedRecipe("emzuli_pipe", new ItemStack(emzuliPipe, 8),
+                "lge",
+                'l', Blocks.LAPIS_BLOCK, 'g', Blocks.GLASS, 'e', Items.EMERALD);
+        Item stripedPipe = Item.getByNameOrId("buildcrafttransport:pipe_stripes_item");
+        helpAddShapedRecipe("striped_pipe", new ItemStack(stripedPipe, 8),
+                "ege",
+                'e', goldGear, 'g', Blocks.GLASS);
     }
 
     @EventHandler

@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "result": {
+    "item": "minecraft:obsidian",
+    "count": 1
+  },
+  "ingredients": [
+    {
+      "type": "minecraft:item_nbt",
+      "item": "forge:bucketfilled",
+      "nbt": {
+        "FluidName": "oil",
+        "Amount": 1000
+      }
+    },
+    {"type": "minecraft:item", "item": "minecraft:stone", "data": 32767}
+  ]
+}

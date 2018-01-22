@@ -1,0 +1,27 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "result": {
+    "item": "minecraft:dye",
+    "data": 3,
+    "count": 8
+  },
+  "ingredients": [
+    {
+      "type": "minecraft:item_nbt",
+      "item": "forge:bucketfilled",
+      "nbt": {
+        "FluidName": "oil",
+        "Amount": 1000
+      }
+    },
+    {"type": "minecraft:item", "item": "minecraft:wheat_seeds"},
+    {"type": "minecraft:item", "item": "minecraft:wheat_seeds"},
+    {"type": "minecraft:item", "item": "minecraft:wheat_seeds"},
+    {"type": "minecraft:item", "item": "minecraft:wheat_seeds"},
+
+    {"type": "minecraft:item", "item": "minecraft:wheat_seeds"},
+    {"type": "minecraft:item", "item": "minecraft:wheat_seeds"},
+    {"type": "minecraft:item", "item": "minecraft:wheat_seeds"},
+    {"type": "minecraft:item", "item": "minecraft:wheat_seeds"}
+  ]
+}
