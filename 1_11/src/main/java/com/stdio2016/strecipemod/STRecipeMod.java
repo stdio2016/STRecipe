@@ -34,14 +34,22 @@ public class STRecipeMod
     public static final String MODID = "strecipemod";
     public static final String VERSION = "3.0";
 
+    public static String getMinorVersion(String ver) {
+        int d1 = ver.indexOf('.');
+        if (d1 < 0) return ver;
+        int d2 = ver.indexOf('.', d1+1);
+        if (d2 < 0) return ver;
+        return ver.substring(0, d2);
+    }
+
     @NetworkCheckHandler
     public boolean check(Map<String, String> something, Side side) {
         // this mod does not depend on any other mod
         // on server multi player, clients don't need to install this mod
         if (something.containsKey(MODID)) {
             System.out.println("YAY!!! Somebody installed stdio2016's mod.");
-            String s = something.get(MODID);
-            if (s.compareTo(VERSION) != 0) {
+            String s = getMinorVersion(something.get(MODID));
+            if (s.compareTo(getMinorVersion(VERSION)) != 0) {
                 // different version of my mod, may cause problems
                 System.out.println("But version is incorrect");
                 return false;

@@ -16,11 +16,14 @@ import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.Mod.EventHandler;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
+import net.minecraftforge.fml.common.network.NetworkCheckHandler;
 import net.minecraftforge.fml.common.registry.ForgeRegistries;
 import net.minecraftforge.fml.common.registry.GameRegistry;
+import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.oredict.OreDictionary;
 
 import java.util.HashSet;
+import java.util.Map;
 import java.util.Set;
 
 /**
@@ -32,6 +35,30 @@ public class STRecipeMod
     public static final String MODID = "strecipemod";
     public static final String VERSION = "3.0";
     private static final Set<String> uniqueNames = new HashSet<>();
+
+    public static String getMinorVersion(String ver) {
+        int d1 = ver.indexOf('.');
+        if (d1 < 0) return ver;
+        int d2 = ver.indexOf('.', d1+1);
+        if (d2 < 0) return ver;
+        return ver.substring(0, d2);
+    }
+
+    @NetworkCheckHandler
+    public boolean check(Map<String, String> something, Side side) {
+        // this mod does not depend on any other mod
+        // on server multi player, clients don't need to install this mod
+        if (something.containsKey(MODID)) {
+            System.out.println("YAY!!! Somebody installed stdio2016's mod.");
+            String s = getMinorVersion(something.get(MODID));
+            if (s.compareTo(getMinorVersion(VERSION)) != 0) {
+                // different version of my mod, may cause problems
+                System.out.println("But version is incorrect");
+                return false;
+            }
+        }
+        return true;
+    }
 
     private void uniqueNameCheck(String uniqueName) {
         if (uniqueNames.contains(uniqueName)) {
