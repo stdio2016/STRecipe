@@ -565,13 +565,18 @@ public class STRecipeMod
     }
 
     private void woolRecolor() {
-        final int colorId[] = {15, 14, 13, 12, 11, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1, 0};
+        final String colorName[] = {
+                "White", "Orange", "Magenta", "LightBlue",
+                "Yellow", "Lime", "Pink", "Gray",
+                "LightGray", "Cyan", "Purple", "Blue",
+                "Brown", "Green", "Red", "Black"
+        };
         for (int i = 0; i < 16; i++) {
-            helpAddShapedRecipe("woolrecolor_"+colorId[i],
+            helpAddShapedRecipe("woolrecolor_"+colorName[i],
                     new ItemStack(Blocks.WOOL, 8, i),
                     "www","wcw","www",
                     'w', Blocks.WOOL,
-                    'c', new ItemStack(Items.DYE, 1, colorId[i])
+                    'c', "dye"+colorName[i]
             );
         }
     }
