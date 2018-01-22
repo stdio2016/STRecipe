@@ -1,0 +1,25 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "result": {
+    "item": "minecraft:dye",
+    "data": 0,
+    "count": 24
+  },
+  "pattern": [
+    " w ",
+    "gOg",
+    " g "
+  ],
+  "key": {
+    "w": {"item": "minecraft:wool", "data": 32767},
+    "O": {
+      "type": "minecraft:item_nbt",
+      "item": "forge:bucketfilled",
+      "nbt": {
+        "FluidName": "oil",
+        "Amount": 1000
+      }
+    },
+    "g": {"item": "minecraft:glass"}
+  }
+}
