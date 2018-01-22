@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "result": {
+    "item": "minecraft:dye", "data": 0,
+    "count": 1
+  },
+  "ingredients": [
+    {"item": "weeeflowers:blackdyeitem"},
+    {"item": "weeeflowers:blackdyeitem"}
+  ]
+}
