@@ -5,6 +5,7 @@ import net.minecraft.block.Block;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
 import net.minecraft.item.Item;
+import net.minecraft.item.ItemBlock;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.crafting.IRecipe;
 import net.minecraft.nbt.NBTTagInt;
@@ -673,6 +674,29 @@ public class STRecipeMod
                 inputs
         );
         GameRegistry.addRecipe(re);
+
+        Item cotton = Item.getByNameOrId("harvestcraft:cottonitem");
+        ItemStack waterBottle = new ItemStack(Items.POTIONITEM);
+        waterBottle.setTagInfo("Potion", new NBTTagString("minecraft:water"));
+
+        GameRegistry.addRecipe(new NbtSensitiveShapelessRecipe(
+                new ItemStack(Items.DYE, 3, 0), // ink sac
+                Lists.newArrayList(
+                        new ItemStack(cotton),
+                        new ItemStack(Items.COAL, 1, 0), // coal
+                        waterBottle
+                )
+        ));
+        GameRegistry.addRecipe(new NbtSensitiveShapelessRecipe(
+                new ItemStack(Items.DYE, 24, 0), // ink sac
+                Lists.newArrayList(
+                        new ItemStack(Blocks.WOOL, 1, OreDictionary.WILDCARD_VALUE),
+                        fossil,
+                        new ItemStack(Blocks.GLASS),
+                        new ItemStack(Blocks.GLASS),
+                        new ItemStack(Blocks.GLASS)
+                )
+        ));
     }
 
     @EventHandler
