@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "result": {
+    "item": "buildcraftbuilders:builder"
+  },
+  "pattern": [
+    "kLk",
+    "yTy",
+    "gCg"
+  ],
+  "key": {
+    "k": {"type": "forge:ore_dict", "ore": "dyeBlack"},
+    "L": {"item": "buildcraftcore:marker_volume"},
+    "y": {"type": "forge:ore_dict", "ore": "dyeBlue"},
+    "T": {"item": "minecraft:crafting_table"},
+    "g": {"type": "forge:ore_dict", "ore": "gearDiamond"},
+    "C": {"item": "minecraft:chest"}
+  }
+}

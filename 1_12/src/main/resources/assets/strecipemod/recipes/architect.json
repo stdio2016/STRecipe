@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "result": {
+    "item": "buildcraftbuilders:architect"
+  },
+  "pattern": [
+    "kLk",
+    "yTy",
+    "gpg"
+  ],
+  "key": {
+    "k": {"type": "forge:ore_dict", "ore": "dyeBlack"},
+    "L": {"item": "buildcraftcore:marker_volume"},
+    "y": {"type": "forge:ore_dict", "ore": "dyeYellow"},
+    "T": {"item": "minecraft:crafting_table"},
+    "g": {"type": "forge:ore_dict", "ore": "gearDiamond"},
+    "p": {"item": "buildcraftbuilders:snapshot", "data": 2}
+  }
+}

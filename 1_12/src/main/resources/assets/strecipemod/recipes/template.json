@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "result": {
+    "item": "buildcraftbuilders:snapshot",
+    "data": 0
+  },
+  "pattern": [
+    "w"
+  ],
+  "key": {
+    "w": {"item": "minecraft:wool", "data": 15}
+  }
+}

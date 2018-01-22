@@ -11,7 +11,7 @@
   "credits": "",
   "logoFile": "",
   "screenshots": [],
-  "dependencies": ["ic2", "harvestcraft", "buildcraftbuilders", "weeeflowers"],
+  "dependencies": ["harvestcraft", "ic2","buildcraftcore", "buildcraftbuilders", "weeeflowers"],
   "useDependencyInformation":true
 }
 ]
