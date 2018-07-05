@@ -33,7 +33,7 @@ import java.util.Set;
 public class STRecipeMod
 {
     public static final String MODID = "strecipemod";
-    public static final String VERSION = "3.0";
+    public static final String VERSION = "3.1";
     private static final Set<String> uniqueNames = new HashSet<>();
 
     public static String getMinorVersion(String ver) {
@@ -278,9 +278,11 @@ public class STRecipeMod
                 lightBlue,
                 Blocks.COBBLESTONE
         );
+        // update 2018/7/5: need 8 magenta instead of 4
         helpAddShapelessRecipe("end_stone_by_magenta", new ItemStack(Blocks.END_STONE, 1),
                 magenta, magenta, magenta, magenta,
-                Blocks.COBBLESTONE
+                magenta, magenta, magenta, magenta,
+                Blocks.STONE
         );
         // orange -> gold
         // bone meal -> iron
@@ -339,12 +341,15 @@ public class STRecipeMod
         );
 
         // lava
-        helpAddShapelessRecipe("lava_to_magma", new ItemStack(Blocks.MAGMA, 4),
-                Blocks.STONE,Blocks.STONE,
-                Blocks.STONE,
+        // update 2018/7/5: need more stone
+        helpAddShapelessRecipe("lava_to_magma", new ItemStack(Blocks.MAGMA, 7),
+                Blocks.STONE,Blocks.STONE,Blocks.STONE,
+                Blocks.STONE,Blocks.STONE,Blocks.STONE,
                 Items.LAVA_BUCKET
         );
+        // update 2018/7/5: need more magma
         helpAddShapelessRecipe("magma_to_lava", new ItemStack(Items.LAVA_BUCKET, 1),
+                Blocks.MAGMA,Blocks.MAGMA,Blocks.MAGMA,
                 Blocks.MAGMA,Blocks.MAGMA,Blocks.MAGMA,
                 Items.BUCKET
         );
