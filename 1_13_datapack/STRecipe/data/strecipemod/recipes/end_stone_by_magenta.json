@@ -1,0 +1,16 @@
+{
+  "type": "crafting_shapeless",
+  "group": "makeore",
+  "ingredients": [
+    {"item": "minecraft:magenta_dye"},
+    {"item": "minecraft:magenta_dye"},
+    {"item": "minecraft:magenta_dye"},
+    {"item": "minecraft:magenta_dye"},
+    {"item": "minecraft:magenta_dye"},
+    {"item": "minecraft:magenta_dye"},
+    {"item": "minecraft:magenta_dye"},
+    {"item": "minecraft:magenta_dye"},
+    {"item": "minecraft:stone"}
+  ],
+  "result": {"item": "minecraft:end_stone"}
+}

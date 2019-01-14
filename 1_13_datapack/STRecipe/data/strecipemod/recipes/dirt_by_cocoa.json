@@ -1,0 +1,9 @@
+{
+  "type": "crafting_shapeless",
+  "group": "makeore",
+  "ingredients": [
+    {"item": "minecraft:cocoa_beans"},
+    {"item": "minecraft:cobblestone"}
+  ],
+  "result": {"item": "minecraft:dirt", "count": 16}
+}

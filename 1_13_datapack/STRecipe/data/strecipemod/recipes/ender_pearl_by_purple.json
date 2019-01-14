@@ -1,0 +1,10 @@
+{
+  "type": "crafting_shapeless",
+  "group": "makeore",
+  "ingredients": [
+    {"item": "minecraft:purple_dye"},
+    {"item": "minecraft:purple_dye"},
+    {"item": "minecraft:cobblestone"}
+  ],
+  "result": {"item": "minecraft:ender_pearl"}
+}

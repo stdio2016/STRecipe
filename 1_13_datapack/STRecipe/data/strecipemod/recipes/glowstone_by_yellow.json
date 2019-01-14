@@ -1,0 +1,10 @@
+{
+  "type": "crafting_shapeless",
+  "group": "makeore",
+  "ingredients": [
+    {"item": "minecraft:dandelion_yellow"},
+    {"item": "minecraft:dandelion_yellow"},
+    {"item": "minecraft:cobblestone"}
+  ],
+  "result": {"item": "minecraft:glowstone_dust"}
+}

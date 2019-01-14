@@ -1,0 +1,16 @@
+{
+  "type": "crafting_shapeless",
+  "group": "makeore",
+  "ingredients": [
+    {"item": "minecraft:cyan_dye"},
+    {"item": "minecraft:cobblestone"},
+    {"item": "minecraft:cobblestone"},
+    {"item": "minecraft:cobblestone"},
+    {"item": "minecraft:cobblestone"},
+    {"item": "minecraft:cobblestone"},
+    {"item": "minecraft:cobblestone"},
+    {"item": "minecraft:cobblestone"},
+    {"item": "minecraft:cobblestone"}
+  ],
+  "result": {"item": "minecraft:snow_block", "count": 8}
+}

@@ -1,0 +1,9 @@
+{
+  "type": "crafting_shapeless",
+  "group": "makeore",
+  "ingredients": [
+    {"item": "minecraft:light_blue_dye"},
+    {"item": "minecraft:cobblestone"}
+  ],
+  "result": {"item": "minecraft:prismarine_shard"}
+}
