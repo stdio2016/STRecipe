@@ -1,0 +1,12 @@
+{
+  "type": "crafting_shapeless",
+  "group": "makeore",
+  "ingredients": [
+    {"item": "minecraft:orange_dye"},
+    {"item": "minecraft:orange_dye"},
+    {"item": "minecraft:orange_dye"},
+    {"item": "minecraft:orange_dye"},
+    {"item": "minecraft:cobblestone"}
+  ],
+  "result": {"item": "minecraft:gold_ore"}
+}

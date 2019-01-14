@@ -1,0 +1,12 @@
+{
+  "type": "crafting_shapeless",
+  "group": "makeore",
+  "ingredients": [
+    {"item": "minecraft:water_bucket"},
+    {"item": "minecraft:water_bucket"},
+    {"item": "minecraft:water_bucket"},
+    {"item": "minecraft:water_bucket"},
+    {"item": "minecraft:diorite"}
+  ],
+  "result": {"item": "minecraft:lapis_lazuli"}
+}

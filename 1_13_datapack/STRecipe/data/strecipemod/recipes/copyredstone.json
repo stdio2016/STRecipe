@@ -1,0 +1,14 @@
+{
+  "type": "crafting_shaped",
+  "group": "copy",
+  "pattern": [
+    "SmS",
+    "mSm",
+    "SmS"
+  ],
+  "key": {
+    "S": {"item": "minecraft:cobblestone"},
+    "m": {"item": "minecraft:redstone"}
+  },
+  "result": {"item": "minecraft:redstone_ore", "count": 2}
+}

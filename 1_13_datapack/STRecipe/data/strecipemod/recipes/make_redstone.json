@@ -1,0 +1,10 @@
+{
+  "type": "crafting_shapeless",
+  "group": "makeore",
+  "ingredients": [
+    {"item": "minecraft:rose_red"},
+    {"item": "minecraft:rose_red"},
+    {"item": "minecraft:cobblestone"}
+  ],
+  "result": {"item": "minecraft:redstone"}
+}

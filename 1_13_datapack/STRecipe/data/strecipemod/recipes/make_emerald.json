@@ -1,0 +1,11 @@
+{
+  "type": "crafting_shapeless",
+  "group": "makeore",
+  "ingredients": [
+    {"item": "minecraft:cactus_green"},
+    {"item": "minecraft:cactus_green"},
+    {"item": "minecraft:cactus_green"},
+    {"item": "minecraft:cobblestone"}
+  ],
+  "result": {"item": "minecraft:emerald_ore"}
+}

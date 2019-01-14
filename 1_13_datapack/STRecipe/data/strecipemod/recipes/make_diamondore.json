@@ -1,0 +1,12 @@
+{
+  "type": "crafting_shapeless",
+  "group": "makeore",
+  "ingredients": [
+    {"item": "minecraft:lapis_lazuli"},
+    {"item": "minecraft:lapis_lazuli"},
+    {"item": "minecraft:lapis_lazuli"},
+    {"item": "minecraft:lapis_lazuli"},
+    {"item": "minecraft:cobblestone"}
+  ],
+  "result": {"item": "minecraft:diamond_ore"}
+}
