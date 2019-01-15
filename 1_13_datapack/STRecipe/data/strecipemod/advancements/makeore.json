@@ -1,0 +1,39 @@
+{
+  "display": {
+    "icon": {
+      "item": "minecraft:diamond_ore"
+    },
+    "title": "Make Every Ore",
+    "description": "Make diamond, emerald, gold ore, iron ore, lapis and redstone"
+  },
+  "parent": "strecipemod:make_one_ore",
+  "criteria": {
+    "diamond": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {"recipe": "strecipemod:make_diamondore"}
+    },
+    "emerald": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {"recipe": "strecipemod:make_emerald"}
+    },
+    "gold": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {"recipe": "strecipemod:make_goldore"}
+    },
+    "iron": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {"recipe": "strecipemod:make_ironore"}
+    },
+    "lapis": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {"recipe": "strecipemod:make_lapis"}
+    },
+    "redstone": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {"recipe": "strecipemod:make_redstone"}
+    }
+  },
+  "requirements": [
+    ["diamond"], ["emerald"], ["gold"], ["iron"], ["lapis"], ["redstone"]
+  ]
+}
