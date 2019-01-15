@@ -1,0 +1,14 @@
+{
+  "type": "crafting_shapeless",
+  "group": "wash",
+  "ingredients": [
+    {"item": "minecraft:water_bucket"},
+    {"item": "minecraft:gravel"},
+    {"item": "minecraft:gravel"},
+    {"item": "minecraft:gravel"},
+    {"item": "minecraft:gravel"},
+    {"item": "minecraft:gravel"},
+    {"item": "minecraft:gravel"}
+  ],
+  "result": {"item": "minecraft:sand", "count": 6}
+}

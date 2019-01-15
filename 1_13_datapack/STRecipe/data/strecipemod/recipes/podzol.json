@@ -1,0 +1,13 @@
+{
+  "type": "crafting_shaped",
+  "pattern": [
+    "dgd",
+    "gdg",
+    "dgd"
+  ],
+  "key": {
+    "d": {"item": "minecraft:dirt"},
+    "g": {"item": "minecraft:grass"}
+  },
+  "result": {"item": "minecraft:podzol", "count": 5}
+}

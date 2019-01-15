@@ -1,0 +1,13 @@
+{
+  "type": "crafting_shaped",
+  "pattern": [
+    " i ",
+    "iyi",
+    " i "
+  ],
+  "key": {
+    "i": {"item": "minecraft:ink_sac"},
+    "y": {"item": "minecraft:yellow_wool"}
+  },
+  "result": {"item": "minecraft:sponge"}
+}
